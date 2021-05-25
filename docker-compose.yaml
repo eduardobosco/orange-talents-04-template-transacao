@@ -34,24 +34,24 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_HOST: postgres
 
-#  mysql:
-#    image: 'mysql:latest'
-#    volumes:
-#      - mysql-volume:/var/lib/mysql
-#    ports:
-#      - 3306:3306
-#    environment:
-#      MYSQL_ROOT_PASSWORD: 096913
-#      MYSQL_DATABASE: projeto
-#      MYSQL_USER: mysql
-#      MYSQL_PASSWORD: password
+  mysql:
+    image: 'mysql:latest'
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    ports:
+      - 3312:3312
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: projeto
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: 096913
 
 #  projeto:
 #    image: eduardobosco/transacao
 #    restart: always
 #    environment:
 #      DATABASE_URL: "jdbc:mysql://mysql/projeto"
-#      DATABASE_USERNAME: "root"
+#      DATABASE_USERNAME: "mysql"
 #      DATABASE_PASSWORD: "096913"
 #    ports:
 #      - 8080:8080
@@ -117,8 +117,6 @@ services:
       LOG_LEVEL: INFO
       KAFKA_HOST: "kafka:29092"
       JAEGER_ENDPOINT: http://jaeger:14268/api/traces
-      TZ: America/Sao_paulo
-      TRNSACTION_DELAY: 30000
 
   jaeger:
     image: jaegertracing/all-in-one

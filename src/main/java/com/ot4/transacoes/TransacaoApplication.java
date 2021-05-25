@@ -6,15 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.support.converter.JsonMessageConverter;
 
 @SpringBootApplication
-public class TransacoesApplication {
+public class TransacaoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TransacoesApplication.class, args);
+		SpringApplication.run(TransacaoApplication.class, args);
 	}
-	
-//	@Bean
-//	JsonMessageConverter jsonMessageConverter(){
-//		return new JsonMessageConverter();
-//	}
-
 }
